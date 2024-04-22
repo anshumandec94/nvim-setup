@@ -32,26 +32,26 @@ return {
     end,
 
   },
-    {
-    "coffebar/neovim-project",
-    opts = {
-      projects = { -- define project roots
-        "~/Projects/*",
-        "~/.config/*",
-      },
-    },
-    init = function()
-      -- enable saving the state of plugins in the session
-      vim.opt.sessionoptions:append("globals") -- save global variables that start with an uppercase letter and contain at least one lowercase letter.
-    end,
-    dependencies = {
-      { "nvim-lua/plenary.nvim" },
-      { "nvim-telescope/telescope.nvim", tag = "0.1.4" },
-      { "Shatur/neovim-session-manager" },
-    },
-    lazy = false,
-    priority = 100,
-  },
+    -- {
+    -- "coffebar/neovim-project",
+    -- opts = {
+    --   projects = { -- define project roots
+    --     "~/Projects/*",
+    --     "~/.config/*",
+    --   },
+    -- },
+  --   init = function()
+  --     -- enable saving the state of plugins in the session
+  --     vim.opt.sessionoptions:append("globals") -- save global variables that start with an uppercase letter and contain at least one lowercase letter.
+  --   end,
+  --   dependencies = {
+  --     { "nvim-lua/plenary.nvim" },
+  --     { "nvim-telescope/telescope.nvim", tag = "0.1.4" },
+  --     { "Shatur/neovim-session-manager" },
+  --   },
+  --   lazy = false,
+  --   priority = 100,
+  -- },
   -- change trouble config
   {
     "folke/trouble.nvim",
@@ -87,7 +87,7 @@ return {
     -- lazy=false,
     },
   -- disable trouble
-  { "folke/trouble.nvim", enabled = false },
+  -- { "folke/trouble.nvim", enabled = false },
 
   -- override nvim-cmp and add cmp-emoji
   {
@@ -123,17 +123,17 @@ return {
   },
 
   -- add pyright to lspconfig
-  {
-    "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
-        pyright = {},
-      },
-    },
-  },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   ---@class PluginLspOpts
+  --   opts = {
+  --     ---@type lspconfig.options
+  --     servers = {
+  --       -- pyright will be automatically installed with mason and loaded with lspconfig
+  --       pyright = {},
+  --     },
+  --   },
+  -- },
 
   -- add tsserver and setup with typescript.nvim instead of lspconfig
   -- {
