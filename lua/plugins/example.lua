@@ -77,7 +77,7 @@ return {
   --   },
   --   dependencies = {
   --     "echasnovski/mini.comment",
-  --     "hkupty/iron.nvim", -- repl provider
+  --     "hkupty/iron.nvim", -- repl provider 
   --     -- "akinsho/toggleterm.nvim", -- alternative repl provider
   --     -- "benlubas/molten-nvim", -- alternative repl provider
   --     "anuvyklack/hydra.nvim",
@@ -88,7 +88,10 @@ return {
   --     nn.setup({ activate_hydra_keys = "<leader>h" })
   --   end,
   -- },
+  {
+    'Vigmeus/iron.nvim',
 
+  },
   {
     "GCBallesteros/jupytext.nvim",
     config = true,
