@@ -88,9 +88,23 @@ return {
   --     nn.setup({ activate_hydra_keys = "<leader>h" })
   --   end,
   -- },
+  -- {
+  --   'Vigemus/iron.nvim',
+  --
+  -- },
   {
-    'Vigmeus/iron.nvim',
-
+    "vhyrro/luarocks.nvim",
+    priority = 1001, -- this plugin needs to run before anything else
+    opts = {
+        rocks = { "magick" },
+    },
+  },
+  {
+    "3rd/image.nvim",
+    dependencies = { "luarocks.nvim" },
+    config = function()
+        -- ...
+    end
   },
   {
     "GCBallesteros/jupytext.nvim",
@@ -204,7 +218,20 @@ return {
       },
     },
   },
-
+  {
+        "benlubas/molten-nvim",
+        version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
+        dependencies = { "3rd/image.nvim" },
+        build = ":UpdateRemotePlugins",
+        init = function()
+            -- these are examples, not defaults. Please see the readme
+            vim.g.molten_image_provider = "image.nvim"
+            vim.g.molten_output_win_max_height = 20
+            vim.g.molten_wrap_output= true
+            vim.g.molten_virt_text_output = true
+            vim.g.molten_virt_lines_off_by_1 = true
+        end,
+    },
   -- since `vim.tbl_deep_extend`, can only merge tables and not lists, the code above
   -- would overwrite `ensure_installed` with the new value.
   -- If you'd rather extend the default config, use the code below instead:
